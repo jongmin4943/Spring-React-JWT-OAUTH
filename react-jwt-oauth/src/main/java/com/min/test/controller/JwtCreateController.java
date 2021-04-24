@@ -38,6 +38,7 @@ public class JwtCreateController {
 			User userRequest = User.builder()
 							.username(googleUser.getProvider()+"_"+googleUser.getProviderId())
 							.password(encoder.encode("코봉밥"))
+							.userRealname(googleUser.getName())
 							.email(googleUser.getEmail())
 							.provider(googleUser.getProvider())
 							.providerId(googleUser.getProviderId())

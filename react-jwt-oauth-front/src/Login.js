@@ -20,7 +20,7 @@ const responseGoogle = async (response) => {
 const Login = () => {
   return (
     <GoogleLogin
-      clientId='구글 클라이언트 아이디 입력'
+      clientId='구글 클라이언트 아이디입력해야해'
       buttonText='Login'
       onSuccess={responseGoogle}
       onFailure={responseGoogle}

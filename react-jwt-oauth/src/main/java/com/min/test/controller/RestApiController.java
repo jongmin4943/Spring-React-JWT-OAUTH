@@ -35,10 +35,16 @@ public class RestApiController {
 		PrincipalDetails principal = (PrincipalDetails) authentication.getPrincipal();
 		System.out.println("principalId : "+principal.getUser().getId());
 		System.out.println("principalUsername : "+principal.getUser().getUsername());
+		System.out.println("principalRealName : "+principal.getUser().getUserRealname());
 		System.out.println("principalPassword : "+principal.getUser().getPassword());
 		System.out.println("principalEmail : "+principal.getUser().getEmail());
 		System.out.println("principalRoles : "+principal.getUser().getRoles());
-		return "user";
+		return principal.getUser().getEmail();
+	}
+	@GetMapping("user/good")
+	public String userTest(Authentication authentication) {
+		PrincipalDetails principal = (PrincipalDetails) authentication.getPrincipal();
+		return "실행됐어" + principal.getUser().getUserRealname();
 	}
 	
 	// 매니저 혹은 어드민이 접근 가능
